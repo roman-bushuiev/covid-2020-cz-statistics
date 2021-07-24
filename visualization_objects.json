@@ -1,0 +1,147 @@
+[
+  {
+    "_id": "ef98b340-187e-11eb-8209-2199883244fa",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Coronavirus dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"h\":5,\"i\":\"1\",\"w\":1,\"x\":0,\"y\":0},\"id\":\"8d6b56a0-187e-11eb-8209-2199883244fa\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"embeddableConfig\":{\"mapCenter\":[49.81994971057701,15.47490299999999],\"mapZoom\":7},\"gridData\":{\"h\":5,\"i\":\"2\",\"w\":4,\"x\":0,\"y\":5},\"id\":\"f102dc80-187c-11eb-8209-2199883244fa\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":5,\"i\":\"3\",\"w\":10,\"x\":2,\"y\":0},\"id\":\"7d22b510-187c-11eb-8209-2199883244fa\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"4\",\"w\":4,\"x\":8,\"y\":5},\"id\":\"8bcb0230-1880-11eb-8209-2199883244fa\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"5\",\"w\":4,\"x\":4,\"y\":5},\"id\":\"bc2bfb70-1888-11eb-8c73-8fc65ca2d059\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":5,\"i\":\"6\",\"w\":1,\"x\":1,\"y\":0},\"id\":\"1b87a500-188a-11eb-8c73-8fc65ca2d059\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":2,\"i\":\"7\",\"w\":8,\"x\":4,\"y\":8},\"id\":\"271b5af0-1895-11eb-95c9-e5df73e98147\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.2.4\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "Mon Oct 19 2020 23:59:59 GMT+0200",
+      "timeFrom": "Sun Mar 01 2020 00:00:00 GMT+0100",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "f102dc80-187c-11eb-8209-2199883244fa",
+    "_type": "visualization",
+    "_source": {
+      "title": "Total number of cases by regions map",
+      "visState": "{\"title\":\"Total number of cases by regions map\",\"type\":\"region_map\",\"params\":{\"legendPosition\":\"bottomright\",\"addTooltip\":true,\"colorSchema\":\"Yellow to Red\",\"selectedLayer\":{\"attribution\":\"<p><a href=\\\"https://www.openstreetmap.org/copyright\\\">&#169; OpenStreetMap contributors</a>|<a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a></p>&#10;\",\"weight\":0,\"name\":\"Czechia Regions\",\"url\":\"https://vector.maps.elastic.co/blob/1568039810808655?elastic_tile_service_tos=agree&my_app_version=6.2.4\",\"format\":{\"type\":\"geojson\"},\"fields\":[{\"name\":\"iso_3166_2\",\"description\":\"ISO-3166-2 identifier\"},{\"name\":\"label_en\",\"description\":\"Subdivision name (English)\"},{\"name\":\"label_cs\",\"description\":\"Subdivision name (Czech)\"}],\"created_at\":\"2019-09-09T14:36:27.090606\",\"tags\":[],\"id\":1568039810808655,\"layerId\":\"elastic_maps_service.Czechia Regions\"},\"selectedJoinField\":{\"name\":\"iso_3166_2\",\"description\":\"ISO-3166-2 identifier\"},\"isDisplayWarning\":true,\"wms\":{\"enabled\":false,\"options\":{\"format\":\"image/png\",\"transparent\":true},\"baseLayersAreLoaded\":{},\"tmsLayers\":[{\"id\":\"road_map\",\"url\":\"https://tiles.maps.elastic.co/v2/default/{z}/{x}/{y}.png?elastic_tile_service_tos=agree&my_app_name=kibana&my_app_version=6.2.4\",\"minZoom\":0,\"maxZoom\":10,\"attribution\":\"<p>&#169; <a href=\\\"https://www.openstreetmap.org/copyright\\\">OpenStreetMap contributors</a>|<a href=\\\"https://openmaptiles.org\\\">OpenMapTiles</a>|<a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a></p>&#10;\",\"subdomains\":[]}],\"selectedTmsLayer\":{\"id\":\"road_map\",\"url\":\"https://tiles.maps.elastic.co/v2/default/{z}/{x}/{y}.png?elastic_tile_service_tos=agree&my_app_name=kibana&my_app_version=6.2.4\",\"minZoom\":0,\"maxZoom\":10,\"attribution\":\"<p>&#169; <a href=\\\"https://www.openstreetmap.org/copyright\\\">OpenStreetMap contributors</a>|<a href=\\\"https://openmaptiles.org\\\">OpenMapTiles</a>|<a href=\\\"https://www.elastic.co/elastic-maps-service\\\">Elastic Maps Service</a></p>&#10;\",\"subdomains\":[]}},\"mapZoom\":2,\"mapCenter\":[0,0],\"outlineWeight\":1,\"showAllShapes\":true},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"pocet_nakazenych\",\"customLabel\":\"Total number of cases\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"kraj_iso_kod.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":14,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Region\"}}]}",
+      "uiStateJSON": "{\"mapZoom\":8,\"mapCenter\":[49.81994971057701,15.47490299999999]}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"59ede3b0-188d-11eb-95c9-e5df73e98147\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "8bcb0230-1880-11eb-8209-2199883244fa",
+    "_type": "visualization",
+    "_source": {
+      "title": "Maximum number of deaths per day by regions",
+      "visState": "{\"title\":\"Maximum number of deaths per day by regions\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"},\"valueAxis\":null},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100,\"rotate\":90},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Maximum number of deaths per day\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Maximum number of deaths per day\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"pocet_umrti\",\"customLabel\":\"Maximum number of deaths per day\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"kraj_name.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":14,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Region\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Max pocet_umrti\":\"#614D93\",\"Maximum number of deaths per day\":\"#584477\"},\"legendOpen\":false}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"59ede3b0-188d-11eb-95c9-e5df73e98147\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "bc2bfb70-1888-11eb-8c73-8fc65ca2d059",
+    "_type": "visualization",
+    "_source": {
+      "title": "Number of cases ratio by regions",
+      "visState": "{\"title\":\"Number of cases ratio by regions\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":true,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"pocet_nakazenych\",\"customLabel\":\"Number of cases ratio by regions\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"kraj_name.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":14,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":false}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"59ede3b0-188d-11eb-95c9-e5df73e98147\",\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "8d6b56a0-187e-11eb-8209-2199883244fa",
+    "_type": "visualization",
+    "_source": {
+      "title": "Czech Republic statistics",
+      "visState": "{\"title\":\"Czech Republic statistics\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":18}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"pocet_nakazenych\",\"customLabel\":\"Number of cases\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"pocet_vylecenych\",\"customLabel\":\"Number of recovered\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"pocet_umrti\",\"customLabel\":\"Number of deaths\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"59ede3b0-188d-11eb-95c9-e5df73e98147\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "1b87a500-188a-11eb-8c73-8fc65ca2d059",
+    "_type": "visualization",
+    "_source": {
+      "title": "Prague statistics",
+      "visState": "{\"title\":\"Prague statistics\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":19}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"pocet_nakazenych\",\"customLabel\":\"Number of cases\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"pocet_vylecenych\",\"customLabel\":\"Number of recovered\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"pocet_umrti\",\"customLabel\":\"Number of deaths\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"59ede3b0-188d-11eb-95c9-e5df73e98147\",\"filter\":[{\"meta\":{\"index\":\"7d027750-1886-11eb-8c73-8fc65ca2d059\",\"negate\":false,\"disabled\":false,\"alias\":null,\"type\":\"phrase\",\"key\":\"kraj_name\",\"value\":\"Prague\",\"params\":{\"query\":\"Prague\",\"type\":\"phrase\"}},\"query\":{\"match\":{\"kraj_name\":{\"query\":\"Prague\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "7d22b510-187c-11eb-8209-2199883244fa",
+    "_type": "visualization",
+    "_source": {
+      "title": "Time evolution series",
+      "visState": "{\"title\":\"Time evolution series\",\"type\":\"timelion\",\"params\":{\"expression\":\".es(index=coronavirus,timefield=ï»¿datum,metric=sum:pocet_nakazenych).label(label=\\\"Number of cases\\\").color(color=\\\"red\\\").lines(show=true,width=1.5).points(show=true,radius=1.5),\\n.es(index=coronavirus,timefield=ï»¿datum,metric=sum:pocet_vylecenych).label(label=\\\"Number of recovered\\\").color(color=\\\"green\\\").lines(show=true,width=1.5).points(show=true,radius=1.5),\\n.es(index=coronavirus,timefield=ï»¿datum,metric=sum:pocet_umrti).label(label=\\\"Number of deaths\\\").color(color=\\\"purple\\\").lines(show=true,width=1.5).points(show=true,radius=1.5)\",\"interval\":\"auto\"},\"aggs\":[]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "271b5af0-1895-11eb-95c9-e5df73e98147",
+    "_type": "visualization",
+    "_source": {
+      "title": "Number of cases per day",
+      "visState": "{\"title\":\"Number of cases per day\",\"type\":\"ml_swimlane\",\"params\":{\"interval\":{\"display\":\"1 day\",\"val\":\"d\",\"description\":\"day\"},\"thresholdBands\":[{\"value\":0,\"color\":\"#fee5a0\"},{\"value\":3,\"color\":\"#fecb83\"},{\"value\":25,\"color\":\"#feba7c\"},{\"value\":50,\"color\":\"#f47265\"},{\"value\":75,\"color\":\"#dd5364\"},{\"value\":2000,\"color\":\"#933450\"}],\"unknownThresholdColor\":\"#e6e6e6\",\"tooltipNumberFormat\":\"0.0\",\"showLegend\":true,\"alphabetSortLaneLabels\":\"off\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"pocet_nakazenych\",\"customLabel\":\"Number of cases\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"timeSplit\",\"params\":{\"field\":\"ï»¿datum\",\"interval\":\"d\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Time per day\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"59ede3b0-188d-11eb-95c9-e5df73e98147\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  }
+]
